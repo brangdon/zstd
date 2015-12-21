@@ -140,7 +140,7 @@ static int usage_advanced(const char* programName)
     DISPLAY( " -V     : display Version number and exit\n");
     DISPLAY( " -v     : verbose mode\n");
     DISPLAY( " -q     : suppress warnings; specify twice to suppress errors too\n");
-    //DISPLAY( " -m     : multiple input filenames mode \n");
+    DISPLAY( " -m     : multiple input filenames mode \n");
     DISPLAY( " -c     : force write to standard output, even if it is the console\n");
     DISPLAY( " -D file: use file content as Dictionary \n");
 #ifndef ZSTD_NOBENCH
