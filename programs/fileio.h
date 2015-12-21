@@ -52,8 +52,8 @@ void FIO_setNotificationLevel(unsigned level);
 /* *************************************
 *  Single File functions
 ***************************************/
-int FIO_compressFilename (const char* outfilename, const char* infilename, const char* dictFileName, int compressionLevel);
-int FIO_decompressFilename (const char* outfilename, const char* infilename, const char* dictFileName);
+int FIO_compressFilename(const char* outfilename, const char* infilename, const char* dictFileName, int compressionLevel, const char* passwordValue);
+int FIO_decompressFilename(const char* outfilename, const char* infilename, const char* dictFileName);
 /**
 FIO_compressFilename :
     @result : 0 == ok;  1 == pb with src file.

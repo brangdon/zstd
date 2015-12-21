@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zstd", "zstd\zstd.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fuzzer", "fuzzer\fuzzer.vcxproj", "{6FD4352B-346C-4703-96EA-D4A8B9A6976E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zstdlib", "zstdlib\zstdlib.vcxproj", "{8BFD8150-94D5-4BF9-8A50-7BD9929A0850}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,14 +31,6 @@ Global
 		{6FD4352B-346C-4703-96EA-D4A8B9A6976E}.Release|Win32.Build.0 = Release|Win32
 		{6FD4352B-346C-4703-96EA-D4A8B9A6976E}.Release|x64.ActiveCfg = Release|x64
 		{6FD4352B-346C-4703-96EA-D4A8B9A6976E}.Release|x64.Build.0 = Release|x64
-		{8BFD8150-94D5-4BF9-8A50-7BD9929A0850}.Debug|Win32.ActiveCfg = Debug|Win32
-		{8BFD8150-94D5-4BF9-8A50-7BD9929A0850}.Debug|Win32.Build.0 = Debug|Win32
-		{8BFD8150-94D5-4BF9-8A50-7BD9929A0850}.Debug|x64.ActiveCfg = Debug|x64
-		{8BFD8150-94D5-4BF9-8A50-7BD9929A0850}.Debug|x64.Build.0 = Debug|x64
-		{8BFD8150-94D5-4BF9-8A50-7BD9929A0850}.Release|Win32.ActiveCfg = Release|Win32
-		{8BFD8150-94D5-4BF9-8A50-7BD9929A0850}.Release|Win32.Build.0 = Release|Win32
-		{8BFD8150-94D5-4BF9-8A50-7BD9929A0850}.Release|x64.ActiveCfg = Release|x64
-		{8BFD8150-94D5-4BF9-8A50-7BD9929A0850}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

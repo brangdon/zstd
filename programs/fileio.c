@@ -415,7 +415,7 @@ static int FIO_compressFilename_extRess(cRess_t ress,
 
 
 int FIO_compressFilename(const char* dstFileName, const char* srcFileName,
-                         const char* dictFileName, int compressionLevel)
+                         const char* dictFileName, int compressionLevel, const char* passwordValue)
 {
     clock_t start, end;
     cRess_t ress;
@@ -435,7 +435,7 @@ int FIO_compressFilename(const char* dstFileName, const char* srcFileName,
     end = clock();
     {
         double seconds = (double)(end - start) / CLOCKS_PER_SEC;
-        DISPLAYLEVEL(4, "Completed in %.2f sec \n", seconds);
+		DISPLAYLEVEL(4, "Completed in %.2f sec \n %.s", seconds, passwordValue);
     }
 
     return issueWithSrcFile;
@@ -600,7 +600,7 @@ static int FIO_decompressFile_extRess(dRess_t ress,
 
 
 int FIO_decompressFilename(const char* dstFileName, const char* srcFileName,
-                           const char* dictFileName)
+							const char* dictFileName)
 {
     int missingFiles = 0;
     dRess_t ress = FIO_createDResources(dictFileName);

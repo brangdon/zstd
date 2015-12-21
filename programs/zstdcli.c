@@ -124,6 +124,7 @@ static int usage(const char* programName)
     DISPLAY( "          with no FILE, or when FILE is - , read standard input\n");
     DISPLAY( "Arguments :\n");
     DISPLAY( " -#     : # compression level (1-19, default:1) \n");
+	DISPLAY( " -p#     : password for encryption\\decryption");
     DISPLAY( " -d     : decompression (default for %s extension)\n", ZSTD_EXTENSION);
     //DISPLAY( " -z     : force compression\n");
     DISPLAY( " -f     : overwrite output without prompting \n");
@@ -186,7 +187,9 @@ int main(int argCount, const char** argv)
     const char* programName = argv[0];
     const char* outFileName = NULL;
     const char* dictFileName = NULL;
+	
     char* dynNameSpace = NULL;
+	const char* passwordValue = NULL;
     const char extension[] = ZSTD_EXTENSION;
     int rangeBench = 1;
 
@@ -317,7 +320,13 @@ int main(int argCount, const char** argv)
 #endif   /* ZSTD_NOBENCH */
 
                     /* Pause at the end (hidden option) */
-                case 'p': main_pause=1; argument++; break;
+                case 'P': main_pause=1; argument++; break;
+                
+				case 'p':
+					argument++;
+					passwordValue = argument;
+					argument = "";
+					break;
 
                     /* unknown command */
                 default : return badusage(programName);
@@ -416,7 +425,7 @@ int main(int argCount, const char** argv)
         if (multiple)
           operationResult = FIO_compressMultipleFilenames(filenameTable, filenameIdx, ZSTD_EXTENSION, dictFileName, cLevel);
         else
-          operationResult = FIO_compressFilename(outFileName, filenameTable[0], dictFileName, cLevel);
+          operationResult = FIO_compressFilename(outFileName, filenameTable[0], dictFileName, cLevel, passwordValue);
     }
 
 _end:
